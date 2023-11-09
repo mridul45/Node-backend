@@ -23,6 +23,7 @@ const server = http.createServer((req, res) => {
         res.end(modifiedIndex)
         return;
     }
+    
     // This is the server functionality
     switch (req.url) {
         case '/':
