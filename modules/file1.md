@@ -18,14 +18,14 @@ It is not a web-server.
 
 ## Use of modules
 
-** This code is for lib.js **
+**This code is for lib.js**
 
 exports.sum = (a,b) => {
     return a+b
 }
 
 
-** This code is for app.js **
+__This code is for app.js__
 
 const lib = require('./lib.js')
 console.log(lib)
