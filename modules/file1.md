@@ -14,4 +14,20 @@ It is not a web-server.
 
 -> Open Terminal and type 'node filename'
 
-[In node every file is identified as a module. If we have to use that file we need to export it] []
+[In node every file is identified as a module. If we have to use that file we need to export it]
+
+## Use of modules
+
+** This code is for lib.js **
+
+exports.sum = (a,b) => {
+    return a+b
+}
+
+
+** This code is for app.js **
+
+const lib = require('./lib.js')
+console.log(lib)
+
+console.log(lib.sum(3,5))
