@@ -20,9 +20,11 @@ It is not a web-server.
 
 **This code is for lib.js**
 
+```
 exports.sum = (a,b) => {
     return a+b
 }
+```
 
 
 __This code is for app.js__
