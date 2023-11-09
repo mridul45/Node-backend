@@ -104,3 +104,20 @@ __Reading file ASynchronously__
 })
 
 ```
+
+
+# NPM
+
+__Type this in terminal to generate package.json__
+
+```
+npm init -y
+
+```
+
+__Installing express__
+
+``` 
+    npm install express
+
+```
