@@ -94,3 +94,13 @@ Phasellus eget ligula libero. Aenean eget enim ultricies, consequat augue vel, p
 Proin tempor dapibus nunc, at imperdiet magna venenatis ut. Ut sodales venenatis enim blandit venenatis. Mauris justo leo, placerat quis nisi vel, efficitur consequat urna. Vivamus eget neque maximus, varius libero ut, consectetur felis. Aliquam commodo diam ultricies magna cursus ultrices. Suspendisse at consectetur tortor. Donec elementum maximus massa, sit amet vestibulum urna sodales ac. Nunc libero elit, consequat sed tempor in, sollicitudin et tortor. Phasellus ultricies risus nisi, eget lacinia nibh congue quis.
 
 ```
+
+
+__Reading file ASynchronously__
+
+```
+    fs.readFile('demo.txt','utf-8',(err,txt) => {
+    console.log(txt)
+})
+
+```
