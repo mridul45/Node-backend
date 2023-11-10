@@ -1,3 +1,7 @@
+# Rest API
+
+
+```
 const http = require('http');
 const fs = require('fs');
 const { escape } = require('querystring');
@@ -63,3 +67,5 @@ server.delete('/products/:id',(req,res) => {
 server.listen(8080,()=>{
     console.log("Server Started")
 })
+
+```
