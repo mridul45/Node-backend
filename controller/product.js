@@ -15,7 +15,8 @@ exports.createProducts = async (req, res) => {
         const product = new Product({
             title: "Phone X",
             price: 999,
-            rating: 5
+            rating: 4,
+            description: "fuwbfuwfbuwfbwufbwufbwufbue"
             // Add other fields as needed
         });
 
@@ -58,15 +59,26 @@ exports.deleteProducts = (req,res) => {
 }
 
 
-exports.getAllProducts = (req,res) => {
+exports.getAllProducts = async (req,res) => {
+
+    const products = await Product.find()
     res.json(products)
 }
 
 
-exports.getSingleProduct = (req,res) => {
-    const id = +req.params.id
-    const product = products.find(p=>p.id===id)
-    res.json(req.body)
-}
+exports.getSingleProduct = async (req, res) => {
+    const productId = req.params.id;
 
+    try {
+        const product = await Product.findById(productId);
 
+        if (!product) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        res.json(product);
+    } catch (error) {
+        console.error('Error fetching product:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};

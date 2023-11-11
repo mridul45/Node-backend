@@ -6,7 +6,7 @@ const productSchema = new Schema({
     description: String,
     price: Number,
     discountPercentage: Number,
-    rating: Number,
+    rating: {type: Number,min:[0,'Wrong data'],max:5},
     brand: String,
     category: String,
     thumbnail: String,
