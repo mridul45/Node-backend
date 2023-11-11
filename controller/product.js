@@ -2,16 +2,31 @@
 const http = require('http');
 const fs = require('fs');
 const { escape } = require('querystring');
+const model = require('../model/product')
+
+const Product = model.Product;
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf-8'));
 const products = data.products;
 
 
-exports.createProducts = (req,res) => {
-    console.log(req.body)
-    products.push(req.body)
-    res.json(req.body)
-}
+exports.createProducts = async (req, res) => {
+    try {
+        const product = new Product({
+            title: "Phone X",
+            price: 999,
+            rating: 5
+            // Add other fields as needed
+        });
+
+        const savedProduct = await product.save();
+        console.log(savedProduct);
+        res.status(201).json(savedProduct);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
 
 exports.updateProducts = (req,res) => {
     const id = +req.params.id
